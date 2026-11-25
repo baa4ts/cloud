@@ -1,0 +1,17 @@
+
+generator client {
+    provider = "prisma-client"
+    output   = "../src/generated/prisma"
+    runtime  = "cloudflare"
+}
+
+datasource db {
+    provider = "sqlite"
+}
+
+model Usuario {
+    id        Int      @id @default(autoincrement())
+    nombre    String
+    email     String   @unique
+    creado_en DateTime @default(now())
+}

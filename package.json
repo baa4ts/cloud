@@ -1,0 +1,44 @@
+{
+  "name": "cloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types",
+    "check": "tsc --noEmit",
+    "postinstall": "wrangler types && prisma generate",
+    "db:create": "wrangler d1 create cloud-db",
+    "db:local": "wrangler d1 migrations apply cloud-db --local",
+    "db:remote": "wrangler d1 migrations apply cloud-db --remote",
+    "cf:login": "wrangler login",
+    "prisma:generate": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.23.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.23.0",
+  "type": "module",
+  "dependencies": {
+    "@prisma/adapter-d1": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "prisma": "^7.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.167.0"
+  }
+}

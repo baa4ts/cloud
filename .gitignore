@@ -1,0 +1,40 @@
+# Dependencias
+node_modules/
+pnpm-workspace.yaml
+
+# Cloudflare Wrangler
+.wrangler/
+worker-configuration.d.ts
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Archivos compilados
+dist/
+build/
+*.tsbuildinfo
+
+# Prisma
+src/generated/prisma/
+prisma/migrations/
+
+# Editores
+.vscode/
+.idea/
+
+# Registros
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

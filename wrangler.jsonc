@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "backend",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["WebSocketServer"],
+    },
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "WEBSOCKET",
+        "class_name": "WebSocketServer",
+      },
+    ],
+  },
+
+
+  // 
+  // Este es un ejemplo de como te debe de quedar
+  //
+
+  // "d1_databases": [
+  //   {
+  //     "binding": "cloud_db",
+  //     "database_name": "cloud-db",
+  //     "database_id": "",
+  //     "remote": true,
+  //     "migrations_dir": "prisma/migrations", // este de aca se debe de poner a mano
+  //   },
+  // ],
+}
